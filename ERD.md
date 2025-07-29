@@ -1,3 +1,6 @@
+# E-commerce Database ER Diagram
+
+```mermaid
 erDiagram
     USER {
         int user_id PK
@@ -170,6 +173,4 @@ erDiagram
     ORDER_HEADER ||--|| PAYMENT : "has"
     ORDER_HEADER ||--|| DELIVERY : "has"
     ORDER_HEADER ||--o{ REVIEW : "reviewed_in"
-    
-    %% Styling
-    %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#e1f5fe", "primaryTextColor": "#01579b", "primaryBorderColor": "#0277bd", "lineColor": "#0288d1", "secondaryColor": "#f3e5f5", "tertiaryColor": "#e8f5e8"}}}%%
+```
