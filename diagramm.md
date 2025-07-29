@@ -1,11 +1,21 @@
-flowchart TD
-    Start([User Visits Platform]) --> UserType{User Type?}
+erDiagram
+    USER {
+        int user_id PK
+        string first_name
+        string last_name
+        string email UK
+        string phone_number UK
+        string password_hash
+        enum user_type
+        datetime created_at
+    }
     
-    UserType -->|New User| Register[User Registration]
-    UserType -->|Existing User| Login[User Login]
+    PRODUCT {
+        int product_id PK
+        int supplier_id FK
+        string product_name
+        decimal price
+        int stock_quantity
+    }
     
-    Register --> Verify[Email/Phone Verification]
-    Login --> Dashboard{User Dashboard}
-    
-    Dashboard -->|Buyer| BuyerDash[Buyer Dashboard]
-    Dashboard -->|Supplier| SupplierDash[Supplier Dashboard]
+    USER ||--o{ PRODUCT : "sells"
